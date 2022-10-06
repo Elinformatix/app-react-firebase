@@ -120,7 +120,7 @@ export async function getUserPublicProfileInfo(uid) {
 
 export async function getUserProfilePhoto(usernamePhoto) {
   // Create a child reference
-  const imagesRef = ref(storage, `images/${usernamePhoto}`);
+  const imagesRef = ref(storage, 'images/${usernamePhoto}');
   // imagesRef now points to 'images'
 }
 
@@ -147,10 +147,10 @@ export async function getProfilePhotoUrl(profilePicture) {
   const profileRef = ref(storage, profilePicture);
   console.log(profilePicture);
 
-  /* const url = await getDownloadURL(
-    ref(storage, "images/MBr3m7RbiWSlnskhZ94EZ9Vkh542")
-  ); */
-  const url = await getDownloadURL(profileRef);
+   const url = await getDownloadURL(
+    ref(storage, "images/DoVq29OtimMQoLzNzfMe7TD4Ahn2")
+  ); 
+  // const url = await getDownloadURL(profileRef);
   /* .then((url) => {
       // `url` is the download URL for 'images/stars.jpg'
       console.log("url", url);

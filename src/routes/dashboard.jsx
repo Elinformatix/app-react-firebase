@@ -130,7 +130,7 @@ export default function Dashboard() {
           name="title"
           onInput={handleInput}
           value={link.title}
-          autoComplete={false}
+          autoComplete="false"
         />
         <label>URL</label>
         <input
@@ -138,7 +138,7 @@ export default function Dashboard() {
           name="url"
           onInput={handleInput}
           value={link.url}
-          autoComplete={false}
+          autoComplete="false"
         />
         <input type="submit" value="Añadir link" className="btn" />
       </form>

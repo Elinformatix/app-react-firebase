@@ -11,6 +11,7 @@ import UsernameView from "./routes/usernameView";
 import LoginV2 from "./routes/loginv2";
 import EditProfile from "./routes/editProfile";
 import SignOut from "./routes/signout";
+import Cadastro from "./components/cadastro/Cadastro"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Route path="signout" element={<SignOut />} />
       <Route path="u/:username" element={<Profile />} />
       <Route path="choose-username" element={<UsernameView />} />
+      <Route path="cadastro" element={<Cadastro />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
