@@ -1,0 +1,59 @@
+
+const sendPost = (values) => {
+  const baseURL = "https://script.google.com/macros/s/AKfycbyOGJrhqs6AwTM0YVDnIVAB_CdknJsIFVMCDpMC/exec";
+
+  const post_title = values.nombre;
+ 
+
+
+  const fortmatResponse = (res) => {
+    return JSON.stringify(res, null, 2);
+  }
+  
+  async function postData() {
+    const postData = {
+      login: post_title.current.value,
+      
+    };
+
+    try {
+      const res = await fetch(`${baseURL}`, {
+        method: "post",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+          "x-access-token": "token-value",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify(postData),
+      });
+
+      if (!res.ok) {
+        const message = `An error has occured: ${res.status} - ${res.statusText}`;
+        throw new Error(message);
+      }
+
+      const data = await res.json();
+
+      const result = {
+        status: res.status + "-" + res.statusText,
+        headers: {
+          "Content-Type": res.headers.get("Content-Type"),
+          "Content-Length": res.headers.get("Content-Length"),
+        },
+        data: data,
+      };
+
+      
+    } catch (err) {
+      
+    }
+  }
+  
+  const clearPostOutput = () => {
+   
+  }
+  
+  return 1 >= 18 && 1 <= 65;
+}
+export  { sendPost }

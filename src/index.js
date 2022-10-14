@@ -12,8 +12,15 @@ import LoginV2 from "./routes/loginv2";
 import EditProfile from "./routes/editProfile";
 import SignOut from "./routes/signout";
 import Cadastro from "./components/cadastro/Cadastro"
+import Painel from "./containers/painel/painel";
+import Admin from "./containers/sunsetAdmin";
+import "./i18n"
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./assets/styles/tailwind.css";
+
 
 ReactDOM.render(
+
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
@@ -24,9 +31,12 @@ ReactDOM.render(
       <Route path="u/:username" element={<Profile />} />
       <Route path="choose-username" element={<UsernameView />} />
       <Route path="cadastro" element={<Cadastro />} />
+      <Route path="painel" element={<Painel />} />
+      <Route path="admin/*" element={<Admin />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

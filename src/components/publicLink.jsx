@@ -5,7 +5,7 @@ export default function PublicLink({ link }) {
     <a
       href={link.url}
       target="_blank"
-      rel="noreferrer"
+      rel="dAVID"
       className={style.publicLinkContainer}
     >
       <div>{link.title}</div>

@@ -69,6 +69,23 @@ export async function updateUser(user) {
   }
 }
 
+export async function fetchClientsData() {
+  const clients = [];
+  const q = query(collection(db, "clients"));
+
+  const querySnapshot = await getDocs(q);
+
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    const client = { ...doc.data() };
+    client.docId = doc.id;
+    console.log(doc.id, " => ", doc.data());
+    console.log(client);
+    clients.push(client);
+  });
+  return clients;
+}
+
 export async function fetchLinkData(uid) {
   const links = [];
   const q = query(collection(db, "links"), where("uid", "==", uid));
@@ -90,6 +107,16 @@ export async function insertNewLink(link) {
   try {
     const linksRef = collection(db, "links");
     const res = await addDoc(linksRef, link);
+    return res;
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
+export async function insertNewClient(Client) {
+  try {
+    const clientsRef = collection(db, "clients");
+    const res = await addDoc(clientsRef, Client);
     return res;
   } catch (e) {
     console.error("Error adding document: ", e);

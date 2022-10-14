@@ -2,10 +2,17 @@
   width: 500px;
   margin: 100px auto;
   text-align: center;
+  
 }
 
 .profilePicture img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+}
+
+.bg-fondo{
+  background-color: rgb(134, 25, 143);
+  background-image: radial-gradient(at 40% 76%, rgb(56, 189, 248) 0, transparent 11%), radial-gradient(at 17% 85%, rgb(23, 23, 23) 0, transparent 43%), radial-gradient(at 59% 98%, rgb(245, 158, 11) 0, transparent 29%), radial-gradient(at 89% 95%, rgb(240, 249, 255) 0, transparent 28%), radial-gradient(at 28% 31%, rgb(194, 65, 12) 0, transparent 55%), radial-gradient(at 58% 75%, rgb(88, 28, 135) 0, transparent 46%);
+
 }

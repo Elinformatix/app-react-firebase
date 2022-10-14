@@ -55,7 +55,9 @@ export default function Profile() {
   }
 
   if (state === 1) {
-    return <Loading />;
+    return (
+    <Loading />
+    );
   }
 
   return (

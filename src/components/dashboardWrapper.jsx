@@ -3,7 +3,7 @@ import style from "./dashboardWrapper.module.css";
 
 export default function dashboardWrapper({ children }) {
   return (
-    <div>
+    <div className="bg-grad">
       <nav className={style.nav}>
         <div className={style.logo}>Logotipo</div>
         <Link to="/dashboard">Links</Link>
